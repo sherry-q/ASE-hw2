@@ -7,15 +7,11 @@
       {%- for message in get_flashed_messages() %}
          {{ message }}
       {%- endfor %}
-<<<<<<< HEAD
       
-      <h3>Shopping List (<a href = "{{ url_for('new') }}">Add Item
-=======
-		
-      <h3>Shopping List (<a href = "{{ url_for('form') }}">Add/Remove Item
->>>>>>> 4452b4993e35b867e9950f911eced4dbbf58e5e4
-         </a>)</h3>
-      
+      <h3>Shopping List</h3>
+      <h4><a href = "{{ url_for('new') }}">Add Item</a></h4>
+      <h4><a href = "{{ url_for('remove') }}">Remove Item</a></h4>
+
       <table>
          <thead>
             <tr>

@@ -35,6 +35,20 @@ def new():
          return redirect(url_for('show_all'))
    return render_template('new.html')
 
+@app.route('/remove', methods = ['GET', 'POST'])
+def remove():
+   if request.method == 'POST':
+      if not request.form['name'] or not request.form['quantity']:
+         flash('Please enter all the fields', 'error')
+      else:
+         item = shopping_list(request.form['name'], request.form['quantity'])
+         to_delete = shopping_list.query.filter_by(name=request.form['name']).first()
+         db.session.delete(to_delete)
+         db.session.commit()
+         flash('Record was successfully added')
+         return redirect(url_for('show_all'))
+   return render_template('new.html')
+
 if __name__ == '__main__':
    db.create_all()
    app.run(debug = True)
