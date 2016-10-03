@@ -3,11 +3,6 @@
    <head></head>
    <body>
       
-      <hr/>
-      {%- for message in get_flashed_messages() %}
-         {{ message }}
-      {%- endfor %}
-      
       <h3>Shopping List</h3>
       <h4><a href = "{{ url_for('new') }}">Add Item</a></h4>
       <h4><a href = "{{ url_for('remove') }}">Remove Item</a></h4>
