@@ -38,6 +38,18 @@ class MyTest(unittest.TestCase):
 
 		assert q is None
 
+	def test_not_exist(self):
+		l3 = shopping_list(name='test3', quantity='1')
+		db.session.add(l3)
+		db.session.commit()
+
+		assert l3 in db.session
+		testname = 'test100'
+
+		q = shopping_list.query.filter_by(name=testname).first()
+
+		assert q is None
+
 if __name__ == '__main__':
 	unittest.main()
 	session.close()

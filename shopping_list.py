@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shopping_list.sqlite3'
-app.config['SECRET_KEY'] = "random string"
+app.config['SECRET_KEY'] = "9cHmmg00EE"
 
 db = SQLAlchemy(app)
 
@@ -35,7 +35,6 @@ def new():
          item = shopping_list(request.form['name'], request.form['quantity'])
          db.session.add(item)
          db.session.commit()
-         flash('Record was successfully added')
          return redirect(url_for('home'))
    return render_template('new.html')
 
@@ -46,15 +45,20 @@ def remove():
       if not request.form['name'] or not request.form['quantity']:
          flash('Please enter all the fields', 'error')
       else:
-         # get item from input
          item = shopping_list(request.form['name'], request.form['quantity'])
-         to_delete = shopping_list.query.filter_by(name=request.form['name']).first()
-         db.session.delete(to_delete)
-         db.session.commit()
-         flash('Record was successfully added')
-         return redirect(url_for('home'))
+         # check if item exists
+         if db.session.query(shopping_list.id).filter(shopping_list.name==request.form['name'],
+                                 shopping_list.quantity==request.form['quantity']).count() < 1:
+            return render_template('not_found.html')
+         else:
+            # get item from input
+            to_delete = shopping_list.query.filter_by(name=request.form['name']).first()
+            db.session.delete(to_delete)
+            db.session.commit()
+            return redirect(url_for('home'))
    return render_template('new.html')
 
 if __name__ == '__main__':
+   db.drop_all()
    db.create_all()
    app.run(debug = True)
