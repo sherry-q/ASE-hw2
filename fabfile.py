@@ -20,8 +20,8 @@ def static_analysis():
 		pass
 
 def commit():
-	local("git add -u && git commit")
-	local("git add shopping_list_static_analysis.txt")
+	local("git add -u && git add shopping_list_static_analysis.txt")
+	local("git commit")
 
 def push():
 	local("git push")

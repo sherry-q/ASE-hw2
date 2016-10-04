@@ -1,0 +1,468 @@
+************* Module shopping_list
+C:  7, 0: Invalid constant name "app" (invalid-name)
+C: 11, 0: Invalid constant name "db" (invalid-name)
+C: 13, 0: Invalid class name "shopping_list" (invalid-name)
+C: 16, 1: Invalid class attribute name "id" (invalid-name)
+E: 16, 6: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 16,27: Instance of 'SQLAlchemy' has no 'Integer' member (no-member)
+E: 17, 8: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 17,18: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+E: 18,12: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 18,22: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+R: 13, 0: Too few public methods (0/2) (too-few-public-methods)
+E: 27,42: Class 'shopping_list' has no 'query' member (no-member)
+E: 38, 3: Instance of 'scoped_session' has no 'add' member (no-member)
+E: 39, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+E: 48, 5: Instance of 'scoped_session' has no 'query' member (no-member)
+E: 53,15: Class 'shopping_list' has no 'query' member (no-member)
+E: 54, 3: Instance of 'scoped_session' has no 'delete' member (no-member)
+E: 55, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+
+
+Report
+======
+36 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |1          |=          |100.00      |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|method   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |3      |3          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    flask (shopping_list)
+    flask_sqlalchemy (shopping_list)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |43     |69.35 |43       |=          |
++----------+-------+------+---------+-----------+
+|docstring |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|comment   |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|empty     |9      |14.52 |9        |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |4      |4        |=          |
++-----------+-------+---------+-----------+
+|refactor   |1      |1        |=          |
++-----------+-------+---------+-----------+
+|warning    |0      |0        |=          |
++-----------+-------+---------+-----------+
+|error      |13     |13       |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------+------------+
+|message id             |occurrences |
++=======================+============+
+|no-member              |13          |
++-----------------------+------------+
+|invalid-name           |4           |
++-----------------------+------------+
+|too-few-public-methods |1           |
++-----------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -9.44/10 (previous run: -9.44/10, +0.00)
+
+************* Module shopping_list
+C:  7, 0: Invalid constant name "app" (invalid-name)
+C: 11, 0: Invalid constant name "db" (invalid-name)
+C: 13, 0: Invalid class name "shopping_list" (invalid-name)
+C: 16, 1: Invalid class attribute name "id" (invalid-name)
+E: 16, 6: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 16,27: Instance of 'SQLAlchemy' has no 'Integer' member (no-member)
+E: 17, 8: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 17,18: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+E: 18,12: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 18,22: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+R: 13, 0: Too few public methods (0/2) (too-few-public-methods)
+E: 27,42: Class 'shopping_list' has no 'query' member (no-member)
+E: 38, 3: Instance of 'scoped_session' has no 'add' member (no-member)
+E: 39, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+E: 48, 5: Instance of 'scoped_session' has no 'query' member (no-member)
+E: 53,15: Class 'shopping_list' has no 'query' member (no-member)
+E: 54, 3: Instance of 'scoped_session' has no 'delete' member (no-member)
+E: 55, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+
+
+Report
+======
+36 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |1          |=          |100.00      |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|method   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |3      |3          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    flask (shopping_list)
+    flask_sqlalchemy (shopping_list)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |43     |69.35 |43       |=          |
++----------+-------+------+---------+-----------+
+|docstring |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|comment   |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|empty     |9      |14.52 |9        |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |4      |4        |=          |
++-----------+-------+---------+-----------+
+|refactor   |1      |1        |=          |
++-----------+-------+---------+-----------+
+|warning    |0      |0        |=          |
++-----------+-------+---------+-----------+
+|error      |13     |13       |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------+------------+
+|message id             |occurrences |
++=======================+============+
+|no-member              |13          |
++-----------------------+------------+
+|invalid-name           |4           |
++-----------------------+------------+
+|too-few-public-methods |1           |
++-----------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -9.44/10 (previous run: -9.44/10, +0.00)
+
+************* Module shopping_list
+C:  7, 0: Invalid constant name "app" (invalid-name)
+C: 11, 0: Invalid constant name "db" (invalid-name)
+C: 13, 0: Invalid class name "shopping_list" (invalid-name)
+C: 16, 1: Invalid class attribute name "id" (invalid-name)
+E: 16, 6: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 16,27: Instance of 'SQLAlchemy' has no 'Integer' member (no-member)
+E: 17, 8: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 17,18: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+E: 18,12: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 18,22: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+R: 13, 0: Too few public methods (0/2) (too-few-public-methods)
+E: 27,42: Class 'shopping_list' has no 'query' member (no-member)
+E: 38, 3: Instance of 'scoped_session' has no 'add' member (no-member)
+E: 39, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+E: 48, 5: Instance of 'scoped_session' has no 'query' member (no-member)
+E: 53,15: Class 'shopping_list' has no 'query' member (no-member)
+E: 54, 3: Instance of 'scoped_session' has no 'delete' member (no-member)
+E: 55, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+
+
+Report
+======
+36 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |1          |=          |100.00      |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|method   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |3      |3          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    flask (shopping_list)
+    flask_sqlalchemy (shopping_list)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |43     |69.35 |43       |=          |
++----------+-------+------+---------+-----------+
+|docstring |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|comment   |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|empty     |9      |14.52 |9        |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |4      |4        |=          |
++-----------+-------+---------+-----------+
+|refactor   |1      |1        |=          |
++-----------+-------+---------+-----------+
+|warning    |0      |0        |=          |
++-----------+-------+---------+-----------+
+|error      |13     |13       |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------+------------+
+|message id             |occurrences |
++=======================+============+
+|no-member              |13          |
++-----------------------+------------+
+|invalid-name           |4           |
++-----------------------+------------+
+|too-few-public-methods |1           |
++-----------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -9.44/10 (previous run: -9.44/10, +0.00)
+
+************* Module shopping_list
+C:  7, 0: Invalid constant name "app" (invalid-name)
+C: 11, 0: Invalid constant name "db" (invalid-name)
+C: 13, 0: Invalid class name "shopping_list" (invalid-name)
+C: 16, 1: Invalid class attribute name "id" (invalid-name)
+E: 16, 6: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 16,27: Instance of 'SQLAlchemy' has no 'Integer' member (no-member)
+E: 17, 8: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 17,18: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+E: 18,12: Instance of 'SQLAlchemy' has no 'Column' member (no-member)
+E: 18,22: Instance of 'SQLAlchemy' has no 'String' member (no-member)
+R: 13, 0: Too few public methods (0/2) (too-few-public-methods)
+E: 27,42: Class 'shopping_list' has no 'query' member (no-member)
+E: 38, 3: Instance of 'scoped_session' has no 'add' member (no-member)
+E: 39, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+E: 48, 5: Instance of 'scoped_session' has no 'query' member (no-member)
+E: 53,15: Class 'shopping_list' has no 'query' member (no-member)
+E: 54, 3: Instance of 'scoped_session' has no 'delete' member (no-member)
+E: 55, 3: Instance of 'scoped_session' has no 'commit' member (no-member)
+
+
+Report
+======
+36 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |1          |=          |100.00      |100.00   |
++---------+-------+-----------+-----------+------------+---------+
+|method   |1      |1          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |3      |3          |=          |100.00      |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    flask (shopping_list)
+    flask_sqlalchemy (shopping_list)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |43     |69.35 |43       |=          |
++----------+-------+------+---------+-----------+
+|docstring |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|comment   |5      |8.06  |5        |=          |
++----------+-------+------+---------+-----------+
+|empty     |9      |14.52 |9        |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |0        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |0.000    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |4      |4        |=          |
++-----------+-------+---------+-----------+
+|refactor   |1      |1        |=          |
++-----------+-------+---------+-----------+
+|warning    |0      |0        |=          |
++-----------+-------+---------+-----------+
+|error      |13     |13       |=          |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------+------------+
+|message id             |occurrences |
++=======================+============+
+|no-member              |13          |
++-----------------------+------------+
+|invalid-name           |4           |
++-----------------------+------------+
+|too-few-public-methods |1           |
++-----------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -9.44/10 (previous run: -9.44/10, +0.00)
+
