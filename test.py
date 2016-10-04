@@ -1,3 +1,5 @@
+# reference: http://www.drdobbs.com/testing/unit-testing-with-python/240165163
+
 import os
 import unittest
 
@@ -16,6 +18,7 @@ class MyTest(unittest.TestCase):
 		db.drop_all()
 
 	def test_make_list(self):
+		"""Add item to list"""
 		l1 = shopping_list(name='test1', quantity='1')
 		db.session.add(l1)
 		db.session.commit()
@@ -23,6 +26,7 @@ class MyTest(unittest.TestCase):
 		assert l1 in db.session
 
 	def test_remove_list(self):
+		"""Add then remove item from list"""
 		l2 = shopping_list(name='test2', quantity='2')
 		db.session.add(l2)
 		db.session.commit()
@@ -39,6 +43,7 @@ class MyTest(unittest.TestCase):
 		assert q is None
 
 	def test_not_exist(self):
+		"""Check for item that does not exist"""
 		l3 = shopping_list(name='test3', quantity='1')
 		db.session.add(l3)
 		db.session.commit()

@@ -5,8 +5,6 @@ from fabric.api import *
 from fabric.contrib.console import confirm
 import os
 
-#env.hosts = ['shopping_list_server']
-
 # run unit tests
 def test():
 	with settings(warn_only=True):

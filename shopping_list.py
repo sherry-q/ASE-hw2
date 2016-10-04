@@ -10,55 +10,51 @@ app.config['SECRET_KEY'] = "9cHmmg00EE"
 db = SQLAlchemy(app)
 
 class shopping_list(db.Model):
-   # class definition
-   id = db.Column('item_id', db.Integer, primary_key = True)
-   name = db.Column(db.String(100))
-   quantity = db.Column(db.String(50))
+	# class definition
+  	id = db.Column('item_id', db.Integer, primary_key = True)
+  	name = db.Column(db.String(100))
+  	quantity = db.Column(db.String(50))
 
-   def __init__(self, name, quantity):
-      self.name = name
-      self.quantity = quantity
+  	def __init__(self, name, quantity):
+  		self.name = name
+  		self.quantity = quantity
 
 @app.route('/')
 def home():
-   # display homepage
-   return render_template('home.html', list = shopping_list.query.all() )
+  	# display homepage
+  	return render_template('home.html', list = shopping_list.query.all() )
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
-   # add record to database
-   if request.method == 'POST':
-      if not request.form['name'] or not request.form['quantity']:
-         flash('Please enter all the fields', 'error')
-      else:
-         # get item from input
-         item = shopping_list(request.form['name'], request.form['quantity'])
-         db.session.add(item)
-         db.session.commit()
-         return redirect(url_for('home'))
-   return render_template('new.html')
+	# add record to database
+	if request.method == 'POST':
+		if not request.form['name'] or not request.form['quantity']:
+			return render_template('form_incomplete.html')
+		else:
+			# get item from input and add
+			item = shopping_list(request.form['name'], request.form['quantity'])
+			db.session.add(item)
+			db.session.commit()
+			return redirect(url_for('home'))
+	return render_template('new.html')
 
 @app.route('/remove', methods = ['GET', 'POST'])
 def remove():
-   # remove record from database
-   if request.method == 'POST':
-      if not request.form['name'] or not request.form['quantity']:
-         flash('Please enter all the fields', 'error')
-      else:
-         item = shopping_list(request.form['name'], request.form['quantity'])
-         # check if item exists
-         if db.session.query(shopping_list.id).filter(shopping_list.name==request.form['name'],
-                                 shopping_list.quantity==request.form['quantity']).count() < 1:
-            return render_template('not_found.html')
-         else:
-            # get item from input
-            to_delete = shopping_list.query.filter_by(name=request.form['name']).first()
-            db.session.delete(to_delete)
-            db.session.commit()
-            return redirect(url_for('home'))
-   return render_template('new.html')
+	# remove record from database
+	if request.method == 'POST':
+		item = shopping_list(request.form['name'], request.form['quantity'])
+		# check if item exists
+		if db.session.query(shopping_list.id).filter(shopping_list.name==request.form['name']).count() < 1:
+			return render_template('not_found.html')
+		else:
+			# get item from input and remove
+			to_delete = shopping_list.query.filter_by(name=request.form['name']).first()
+			db.session.delete(to_delete)
+			db.session.commit()
+			return redirect(url_for('home'))
+	return render_template('new.html')
 
 if __name__ == '__main__':
-   db.drop_all()
-   db.create_all()
-   app.run(debug = True)
+	db.drop_all()
+	db.create_all()
+	app.run(debug = True)
