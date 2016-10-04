@@ -1,19 +1,21 @@
+"""Shopping list unit tests"""
 # reference: http://www.drdobbs.com/testing/unit-testing-with-python/240165163
-
-import os
 import unittest
 
 from shopping_list import app, db
 from shopping_list import shopping_list
 
 class MyTest(unittest.TestCase):
+	"""Test class"""
 	def setUp(self):
+		"""Set up"""
 		app.config['TESTING'] = True
 		app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 		self.app = app.test_client()
 		db.create_all()
 
 	def tearDown(self):
+		"""Tear down"""
 		db.session.remove()
 		db.drop_all()
 
@@ -57,4 +59,4 @@ class MyTest(unittest.TestCase):
 
 if __name__ == '__main__':
 	unittest.main()
-	session.close()
+	db.session.close()

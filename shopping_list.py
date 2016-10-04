@@ -1,6 +1,7 @@
+"""Shopping list app"""
 # reference tutorial: https://www.tutorialspoint.com/flask/flask_sqlalchemy.htm
 
-from flask import Flask, request, flash, url_for, redirect, render_template
+from flask import Flask, request, url_for, redirect, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -10,23 +11,24 @@ app.config['SECRET_KEY'] = "9cHmmg00EE"
 db = SQLAlchemy(app)
 
 class shopping_list(db.Model):
+	"""Shopping list class"""
 	# class definition
-  	id = db.Column('item_id', db.Integer, primary_key = True)
-  	name = db.Column(db.String(100))
-  	quantity = db.Column(db.String(50))
+	id = db.Column('item_id', db.Integer, primary_key=True)
+	name = db.Column(db.String(100))
+	quantity = db.Column(db.String(50))
 
-  	def __init__(self, name, quantity):
-  		self.name = name
-  		self.quantity = quantity
+	def __init__(self, name, quantity):
+		self.name = name
+		self.quantity = quantity
 
 @app.route('/')
 def home():
-  	# display homepage
-  	return render_template('home.html', list = shopping_list.query.all() )
+	"""Display homepage"""
+	return render_template('home.html', list=shopping_list.query.all())
 
-@app.route('/new', methods = ['GET', 'POST'])
+@app.route('/new', methods=['GET', 'POST'])
 def new():
-	# add record to database
+	"""Add record to database"""
 	if request.method == 'POST':
 		if not request.form['name'] or not request.form['quantity']:
 			return render_template('form_incomplete.html')
@@ -38,13 +40,13 @@ def new():
 			return redirect(url_for('home'))
 	return render_template('new.html')
 
-@app.route('/remove', methods = ['GET', 'POST'])
+@app.route('/remove', methods=['GET', 'POST'])
 def remove():
-	# remove record from database
+	"""Remove record from database"""
 	if request.method == 'POST':
-		item = shopping_list(request.form['name'], request.form['quantity'])
 		# check if item exists
-		if db.session.query(shopping_list.id).filter(shopping_list.name==request.form['name']).count() < 1:
+		if db.session.query(shopping_list.id).filter \
+		(shopping_list.name == request.form['name']).count() < 1:
 			return render_template('not_found.html')
 		else:
 			# get item from input and remove
@@ -55,6 +57,5 @@ def remove():
 	return render_template('new.html')
 
 if __name__ == '__main__':
-	db.drop_all()
 	db.create_all()
-	app.run(debug = True)
+	app.run(debug=True)

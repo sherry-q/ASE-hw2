@@ -12,6 +12,12 @@ def test():
 	if result.failed and not confirm("Tests failed. Continue anyway?"):
 		abort("Aborting at user request.")
 
+def static_analysis():
+	try:
+		local("pylint shopping_list.py >> shopping_list_static_analysis.txt")
+	except:
+		pass
+
 def commit():
 	local("git add -p && git commit")
 
@@ -20,6 +26,7 @@ def push():
 
 def prepare_deploy():
 	test()
+	static_analysis()
 	commit()
 	push()
 
