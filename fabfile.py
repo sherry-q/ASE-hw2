@@ -15,7 +15,7 @@ def test():
 		abort("Aborting at user request.")
 
 def commit():
-	local("git add && git commit")
+	local("git add -p && git commit")
 
 def push():
 	local("git push")
@@ -27,10 +27,6 @@ def prepare_deploy():
 
 # start server for web app
 def deploy():
-	# we don't need this right? because it's for remove servers?
-	#with settings(warn_only=True):
-    #    if run("test -d %s" % code_dir).failed:
-    #        run("git clone user@vcshost:/path/to/repo/.git %s" % code_dir)
     with cd(os.getcwd()):
         local("git pull")
         local("python shopping_list.py")
